@@ -1,0 +1,21 @@
+/*
+  created by nhosw at i-swear.com
+                    2007. 11. 11
+  last modified     2007. 12. 24 ver 1.4
+  aquamsgBox - DHTML Message BOX JAVASCRIPT
+  주석을 삭제하지 않는 조건으로 사용을 허락합니다.
+*/
+div.aquamsgBoxbg { position: absolute; left: 0; top: 0; background: #E5E5E5; z-Index: 2000; }
+div#aquamsgBox { position: absolute; left: 40%; top: 40%; z-Index: 2001;border: 1px solid #000;background-color: #eee; }
+div#aquamsgBox div.aquamsgBox_t { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_t.gif") 0 0 no-repeat;*/ width: 290px; height: 34px; }
+div#aquamsgBox div.aquamsgBox_t div.aquamsgBoxtitle { font: 12px Verdana,Tahoma; color: #18609C; font-weight: bold; float: left; margin-left: 15px; margin-top: 10px; cursor: move; }
+div#aquamsgBox div.aquamsgBox_t img.aquamsgBoxclose { float: right; margin-top: 10px; margin-right: 10px; cursor: pointer; }
+div#aquamsgBox div.aquamsgBox_ml { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_ml.gif") 0 0 no-repeat;*/ }
+div#aquamsgBox div.aquamsgBox_ml div.aquamsgBox_mr { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_mr.gif") 100% 0 no-repeat;*/ }
+div#aquamsgBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_mm.gif") 0 0 repeat-x;*/ width: 264px; margin: 0 13px; }
+div#aquamsgBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm img.aquamsgBoximg { float: left; }
+div#aquamsgBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm div.aquamsgBoxmsg { float: left; font: 12px Verdana, Tahoma; color: #333333; margin-left: 5px; margin-bottom: 10px; width: 220px; padding: 0; }
+div#aquamsgBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm div.aquamsgBoxmsg a { color: #18609C; }
+div#aquamsgBox div.aquamsgBoxbtn { clear: left; text-align: center; margin: 0; margin-top: 15px; }
+div#aquamsgBox div.aquamsgBoxbtn input.aquamsgBoxbtnin { margin: 0 3px; /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_btn.gif") no-repeat;*/border: 0; width: 60px; height: 21px; cursor: pointer; }
+div#aquamsgBox div.aquamsgBox_b { background: url(/*"http://cdn.cre-it.com/dx/plugin/alert/img/aquamsgBox/msgbox_b.gif") 0 0 no-repeat;*/ width: 290px; height: 15px; }

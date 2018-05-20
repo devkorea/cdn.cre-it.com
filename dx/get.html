@@ -1,0 +1,16 @@
+<?php
+    $path = dirname(__FILE__);
+    // 공통 모듈
+    include_once($path.'/plugin/jquery.mask.min.js');
+    include_once($path.'/plugin/jquery.datepicker.dx.js');
+    if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] == 'wkd') {
+        include_once($path.'/plugin/alert/alertBox__.js');
+        include_once($path.'/cxApp.js');
+    } else {
+        include_once($path.'/dsitec.js');
+    }
+
+    // 공통 모듈
+    include_once($path.'/cx_board.js');
+
+?>

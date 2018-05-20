@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
+    <title>jQuery UI Tree</title>
+<!--     <link href="tree.css" media="screen" rel="stylesheet" type="text/css" /> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" type="text/javascript"></script>
+<!--     <script src="jquery.tree.js" type="text/javascript"></script> -->
+    <script src="http://cdn.cre-it.com/dx/cx_core.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_label.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_hidden.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_int.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_float.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_check.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_radio.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_combo.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_date.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_text.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_button.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_row.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_pop.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_popup.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_form.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/cx_grid.js?<?=time()?>"></script>
+    <script src="http://cdn.cre-it.com/dx/widget.js?<?=time()?>"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+//            $('.treeview').tree({
+//                 expand: function(event, branch) {
+//                   $('#text').text(branch.parent().children('div').children('span.name').text() + ' expand!');
+//                 },
+//                 collapse: function(event, branch) {
+//                   $('#text').text(branch.parent().children('div').children('span.name').text() + ' collapse!');
+//                 },
+//                 expand_all: function(event, branch) {
+//                   $('#text').text('Expand all!');
+//                 },
+//                 collapse_all: function(event, branch) {
+//                   $('#text').text('Collapse all!');
+//                 },
+//                 drop: function(event, ui) {
+//                   $('#text').text(ui.draggable.children('div').children('span.name').text() +
+//                     ' was dropped on ' +
+//                     ui.droppable.children('div').children('span.name').text());
+//                 },
+//                 handle_for_dragging: 'span.name'
+//            });
+
+            var $treeview = $('.treeview').cx_tree({debug:false});
+//            $('.treeview').cx_tree('set_option', {debug:false});
+
+//            $treeview.cx_tree('aaa', {a:1111111,b:22222});
+//console.error($treeview.cx_tree());
+        var cfg = {};
+        cfg.p       = "11",                // 현재 모듈명
+        cfg.act     = "aaa";              // action 처리 URL
+        cfg.now_tab = "0";                  // 현재 활성탭 index
+        cfg.irows   = "10";      // 초기 읽어올 Row 수
+        cfg.mytab = 1;
+
+                var mFrm = [   // 입력폼
+                          {type:'text',   id:'sid',      text:'아이디', next:'sname',focus:true, value:'aaa', debug:true, align:'center'}
+                        , {type:'text',   id:'sname',      text:'이름', next:'slabel', value:'bbb', color:'#f00'}
+                        , {type:'label',   id:'slabel',      text:'이름', next:'scheck', value:'bbb', color:'#f00',focus:false}
+                        , {type:'check',   id:'scheck',      text:'이름', next:'scombo', value:'bbb', color:'#f00'}
+                        , {type:'combo',   id:'scombo',      text:'이름', next:'sbutton', value:'bbb', color:'#f00'}
+                        , {type:'button',   id:'sbutton',      text:'이름', next:'sint', value:'bbb', color:'#f00'}
+                        , {type:'int',   id:'sint',      text:'이름', next:'sfloat', value:'bbb', color:'#f00'}
+                        , {type:'float',   id:'sfloat',      text:'이름', next:'sdate', value:'bbb', color:'#f00'}
+                        , {type:'hidden',   id:'shidden',      text:'이름', value:'bbb', color:'#f00'}
+                        , {type:'date',   id:'sdate',      text:'이름', next:'spwd', value:'bbb', color:'#f00'}
+                        , {type:'text',   id:'spwd',      text:'비밀번호', next:''}];
+
+                var mFrm2 = [   // 입력폼
+                          {type:'text',   id:'sid2',      text:'아이디', next:'sname2', value:'aaa', debug:true, align:'center'}
+                        , {type:'text',   id:'sname2',      text:'이름', next:'spwd2', value:'bbb', color:'#f00'}
+                        , {type:'text',   id:'spwd2',      text:'비밀번호', next:''}];
+                var mEdit = [   // 입력폼
+                          {type:'text',   id:'sid',      text:'아이디', next:'sname',focus:true, value:'aaa', debug:true, align:'center'}
+                        , {type:'text',   id:'sname',      text:'이름', next:'spwd', value:'bbb', color:'#f00'}
+                        , {type:'text',   id:'spwd',      text:'비밀번호'}];
+
+        var efg = {};
+        efg.p       = "11",                // 현재 모듈명
+        efg.act     = "nn2018-05-07";              // action 처리 URL
+        efg.now_tab = "0";                  // 현재 활성탭 index
+        efg.irows   = "10";      // 초기 읽어올 Row 수
+        efg.mytab = 1;
+        efg.edit = true;
+        efg.multi = true;
+            var $cxForm = $('#cxForm');
+            $cxForm.cx_form({debug:true, 'mod':mFrm, 'cfg':cfg, pop:null});
+            $cxForm.cx_form('set_value', 'sid', 1212);
+            console.error($cxForm.cx_form('get_value', 'sid'));
+//            $cxForm.cx_form('set_focus', 'sname');
+
+//            var $cxForm2 = $('#cxForm2');
+//            $cxForm2.cx_form({debug:true, 'mod':mFrm2, 'cfg':cfg, pop:null});
+//
+//            var $cxEdit = $('#cxEdit');
+//            $cxEdit.cx_form({debug:true, 'mod':mEdit, 'cfg':efg, pop:null});
+
+        });
+    </script>
+  </head>
+  <body>
+
+<div id="cxForm">
+    <input type="text" class="" id="111sid" value="" />
+    <input type="text" class="" id="111sname" value="" />
+    <span id="111slabel" tabindex="0">cccccccc</span>
+    <input type="checkbox" class="" id="111scheck" value="" />
+    <select id="111scombo"><option value="">sssssss</option></select>
+    <button id="111sbutton" class="btn btn_normal btn_green">조&nbsp;회</button>
+
+    <input type="text" class="" id="111sint" value="" />
+    <input type="text" class="" id="111sfloat" value="" />
+    <input type="hidden" class="" id="111shidden" value="" />
+    <input type="text" class="" id="111sdate" value="" />
+    <input type="text" class="" id="111spwd" value="" />
+
+</div>
+
+<div id="cxForm2">
+<input type="text" class="" id="111sid2" value="" />
+<input type="text" class="" id="111sname2" value="" />
+<input type="text" class="" id="111spwd2" value="" />
+</div>
+
+
+<div id="cxEdit">
+
+<input type="text" class="" name="111sid" value="" />
+<input type="text" class="" name="111sname" value="" />
+<input type="text" class="" name="111spwd" value="" /><br />
+
+<input type="text" class="" name="111sid" value="" />
+<input type="text" class="" name="111sname" value="" />
+<input type="text" class="" name="111spwd" value="" /><br />
+
+<input type="text" class="" name="111sid" value="" />
+<input type="text" class="" name="111sname" value="" />
+<input type="text" class="" name="111spwd" value="" />
+</div>
+
+
+
+    <div class='treeview'>
+      <ul>
+        <li>
+          <div>Food</div>
+          <ul>
+            <li>
+              <div>Juice</div>
+              <ul>
+                <li>
+                  <div>Apple</div>
+                </li>
+                <li>
+                  <div>Orange</div>
+                </li>
+                <li>
+                  <div>Strawberry</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div>Meat</div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div>Car</div>
+          <ul>
+            <li>
+              <div>Big</div>
+              <ul>
+                <li>
+                  <div>Huge</div>
+                  <ul>
+                    <li>
+                      <div>Big-foot</div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+  </body>
+</html>

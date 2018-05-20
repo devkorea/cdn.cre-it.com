@@ -1,0 +1,21 @@
+/*
+  created by nhosw at i-swear.com
+                    2007. 11. 11
+  last modified     2007. 12. 24 ver 1.4
+  alertBox - DHTML Message BOX JAVASCRIPT
+  주석을 삭제하지 않는 조건으로 사용을 허락합니다.
+*/
+div.aquamsgBoxbg { position: absolute; left: 0; top: 0; /*background-color: #000;*/ z-Index: 2000;background-color: #000 !important; }
+div#alertBox { position: absolute; left: 40%; top: 40%; z-Index: 2001;border: 1px solid #23397A;background-color: #fff; }
+div#alertBox div.aquamsgBox_t { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/alertBox/msgbox_t.gif") 0 0 no-repeat;*/ width: 290px; height: 34px; }
+div#alertBox div.aquamsgBox_t div.aquamsgBoxtitle { font: 12px Verdana,Tahoma; color: #18609C; font-weight: bold; float: left; margin-left: 15px; margin-top: 10px; cursor: move; }
+div#alertBox div.aquamsgBox_t img.aquamsgBoxclose { float: right; margin-top: 10px; margin-right: 10px; cursor: pointer; }
+div#alertBox div.aquamsgBox_ml { /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/alertBox/msgbox_ml.gif") 0 0 no-repeat;*/ }
+div#alertBox div.aquamsgBox_ml div.aquamsgBox_mr { }
+div#alertBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm { width: 264px; margin: 0 13px; }
+div#alertBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm img.aquamsgBoximg { float: left; }
+div#alertBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm div.aquamsgBoxmsg { float: left; font: 12px Verdana, Tahoma; color: #333333; margin-left: 5px; margin-bottom: 10px; width: 220px; padding: 0; }
+div#alertBox div.aquamsgBox_ml div.aquamsgBox_mr div.aquamsgBox_mm div.aquamsgBoxmsg a { color: #18609C; }
+div#alertBox div.aquamsgBoxbtn { clear: left; text-align: right; margin: 0;}
+div#alertBox div.aquamsgBoxbtn input.aquamsgBoxbtnin { margin-left: 5px; /*background: url("http://cdn.cre-it.com/dx/plugin/alert/img/alertBox/msgbox_btn.gif") no-repeat;*/border: 0; width: 60px; height: 21px; cursor: pointer; }
+div#alertBox div.aquamsgBox_b { width: 290px; height: 15px; }

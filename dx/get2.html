@@ -1,0 +1,46 @@
+<?php
+    $path = dirname(__FILE__);
+    // 공통 모듈
+    include_once($path.'/plugin/jquery.mask.min.js');
+    include_once($path.'/plugin/jquery.datepicker.dx.js');
+    //if (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] == 'wkd') {
+    if ($_SERVER['REMOTE_ADDR'] == '112.218.41.179' || (isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] == 'wkd')) {
+        /**
+        include_once($path.'/plugin/alert/alertBox__.js');
+//        include_once($path.'/cxApp.js');
+
+        include_once($path.'/cx_core.js');
+        include_once($path.'/cx_util.js');
+        include_once($path.'/cx_format.js');
+        include_once($path.'/cx_random.js');
+        include_once($path.'/cx_validate.js');
+        include_once($path.'/cx_label.js');
+        include_once($path.'/cx_hidden.js');
+        include_once($path.'/cx_int.js');
+        include_once($path.'/cx_float.js');
+        include_once($path.'/cx_check.js');
+        include_once($path.'/cx_radio.js');
+        include_once($path.'/cx_combo.js');
+        include_once($path.'/cx_date.js');
+        include_once($path.'/cx_text.js');
+        include_once($path.'/cx_button.js');
+        include_once($path.'/cx_row.js');
+        include_once($path.'/cx_pop.js');
+        include_once($path.'/cx_popup.js');
+        include_once($path.'/cx_page.js');
+        include_once($path.'/cx_form.js');
+        include_once($path.'/cx_grid.js');
+        include_once($path.'/cx_split.js');
+        include_once($path.'/cx_tab.js');
+
+//        include_once($path.'/zebkit.min.js');
+        include_once($path.'/widget.js');
+        **/
+    } else {
+        include_once($path.'/dsitec_v2.js');
+    }
+
+    // 공통 모듈
+    include_once($path.'/cx_board.js');
+
+?>

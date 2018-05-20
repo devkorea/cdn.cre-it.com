@@ -1,0 +1,91 @@
+<?php
+// 안드로이드 디버깅
+// https://developers.google.com/web/tools/chrome-devtools/remote-debugging/?utm_source=dcc&utm_medium=redirect&utm_campaign=2016q3
+
+// CRYPTO
+// https://github.com/tomyun/crypto-js
+
+
+
+    // http://cdn.cre-it.com/dx/logos.html
+    // http://javascriptobfuscator.com/Javascript-Obfuscator.aspx
+    $path = dirname(__FILE__);
+    ob_start();
+    include_once($path.'/plugin/alert/alertBox__.js');
+    include_once($path.'/cx_core.js');
+//    include_once($path.'/cx_util.js');
+    include_once($path.'/cx_format.js');
+    include_once($path.'/cx_random.js');
+    include_once($path.'/cx_validate.js');
+    include_once($path.'/cx_label.js');
+    include_once($path.'/cx_hidden.js');
+    include_once($path.'/cx_int.js');
+    include_once($path.'/cx_float.js');
+    include_once($path.'/cx_check.js');
+    include_once($path.'/cx_radio.js');
+    include_once($path.'/cx_combo.js');
+    include_once($path.'/cx_date.js');
+    include_once($path.'/cx_text.js');
+    include_once($path.'/cx_button.js');
+    include_once($path.'/cx_row.js');
+    include_once($path.'/cx_pop.js');
+    include_once($path.'/cx_popup.js');
+    include_once($path.'/cx_page.js');
+    include_once($path.'/cx_form.js');
+    include_once($path.'/cx_grid.js');
+    include_once($path.'/cx_tree.js');
+    include_once($path.'/cx_split.js');
+    include_once($path.'/cx_tab.js');
+
+
+//    include_once($path.'/cxApp.js');
+
+//    include_once($path.'/cx_validate.js');
+//    include_once($path.'/cx_util.js');
+//    include_once($path.'/cx_tab.js');
+//    include_once($path.'/cx_form.js');
+//    include_once($path.'/cx_grid.js');
+//    include_once($path.'/cx_page.js');
+
+    include_once($path.'/cx_board.js');
+    $content = ob_get_contents();
+    ob_end_clean();
+
+    $content = preg_replace('/[<]/', '&lt;', $content);
+    $content = preg_replace('/[>]/', '&gt;', $content);
+
+    echo nl2br($content);
+
+/*
+        this.replace_html = function(mode_, str_) {
+            try {
+                if (this.debug) console.log('cx_util.replace_html');
+                if (!str_) return '';
+                if (typeof str_ != 'string') return str_;
+                if (mode_ == 'E') {
+                    str_ = str_.replace(/&lt;/g,  '<');
+                    str_ = str_.replace(/&gt;/g,  '>');
+                    str_ = str_.replace(/&#92;/g, '"');
+                    str_ = str_.replace(/&quot;/g, '"');
+                    str_ = str_.replace(/&#039;/g, "'");
+                    str_ = str_.replace(/<br \/>/g, '\n');
+                    str_ = str_.replace(/<br>/g, '\n');
+                    str_ = str_.replace(/<br\/>/g, '\n');
+                    str_ = str_.replace(/&amp;/g,  '&');
+                } else {
+                    str_ = str_.replace(/</g,  '&lt;');
+                    str_ = str_.replace(/>/g,  '&gt;');
+                    str_ = str_.replace(/\"/g, '&quot;');
+                    str_ = str_.replace(/\'/g, '&#39;');
+                    str_ = str_.replace(/\n/g, '<br />');
+                }
+                return str_;
+            } catch(e) {
+                console.info(e);
+                throw '■■■ error: cx_util.replace_html ■■■';
+            }
+        } // end.method.cx_util -> replace_html
+    } // end of cx_util
+
+*/
+?>
